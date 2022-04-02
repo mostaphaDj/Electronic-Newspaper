@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/News/ChangeVideo.aspx" hash="fffffff7f0117600" filehash="2eb257a1b4ca5c36" flags="110000" assembly="App_Web_gajgrpi0" type="ASP.manage_news_changevideo_aspx">
+    <filedeps>
+        <filedep name="/Manage/CPanelNestedMasterPage.master" />
+        <filedep name="/Manage/LeftColuUC.ascx" />
+        <filedep name="/Manage/News/ChangeVideo.aspx" />
+        <filedep name="/Manage/RightColuUC.ascx" />
+        <filedep name="/Site.Master" />
+        <filedep name="/UserControls/FooterUC.ascx" />
+        <filedep name="/UserControls/HeaderUC.ascx" />
+        <filedep name="/UserControls/jqDockFollowUs.ascx" />
+        <filedep name="/UserControls/MainMenu.ascx" />
+        <filedep name="/UserControls/StickySidePanel.ascx" />
+    </filedeps>
+</preserve>

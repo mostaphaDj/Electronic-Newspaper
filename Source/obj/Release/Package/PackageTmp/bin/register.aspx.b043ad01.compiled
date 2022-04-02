@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/Accounts/Register.aspx" hash="fffffff7f0117600" filehash="9c98f75f4503bd9" flags="110000" assembly="App_Web_p2rr5pce" type="ASP.manage_accounts_register_aspx">
+    <filedeps>
+        <filedep name="/Manage/Accounts/Register.aspx" />
+        <filedep name="/Manage/CPanelNestedMasterPage.master" />
+        <filedep name="/Manage/LeftColuUC.ascx" />
+        <filedep name="/Manage/RightColuUC.ascx" />
+        <filedep name="/Site.Master" />
+        <filedep name="/UserControls/FooterUC.ascx" />
+        <filedep name="/UserControls/HeaderUC.ascx" />
+        <filedep name="/UserControls/jqDockFollowUs.ascx" />
+        <filedep name="/UserControls/MainMenu.ascx" />
+        <filedep name="/UserControls/StickySidePanel.ascx" />
+    </filedeps>
+</preserve>

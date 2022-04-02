@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <Pub>
+    <Header>http://ads.elheddaf.com/www/delivery/afr.php?zoneid=1&amp;cb=INSERT_RANDOM_NUMBER_HERE</Header>
+    <leftColu>
+    </leftColu>
+    <leftColuRibbon>
+    </leftColuRibbon>
+  </Pub>
+</config>

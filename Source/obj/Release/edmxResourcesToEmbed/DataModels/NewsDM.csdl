@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NewsDBEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Keywords" EntityType="NewsDBModel.Keywords" />
+    <EntitySet Name="News" EntityType="NewsDBModel.News" />
+    <EntitySet Name="PollsOptions" EntityType="NewsDBModel.PollsOptions" />
+    <EntitySet Name="PollsQuestions" EntityType="NewsDBModel.PollsQuestions" />
+    <AssociationSet Name="FK_PollsOptions_PollsQuestions" Association="NewsDBModel.FK_PollsOptions_PollsQuestions">
+      <End Role="PollsQuestions" EntitySet="PollsQuestions" />
+      <End Role="PollsOptions" EntitySet="PollsOptions" />
+    </AssociationSet>
+    <AssociationSet Name="News_Keywords" Association="NewsDBModel.NewsKeywords">
+      <End Role="News" EntitySet="News" />
+      <End Role="Keywords" EntitySet="Keywords" />
+    </AssociationSet>
+    <EntitySet Name="ViewAuthors" EntityType="NewsDBModel.ViewAuthors" />
+    <EntitySet Name="aspnet_Users" EntityType="NewsDBModel.aspnet_Users" />
+    <AssociationSet Name="FK_News_aspnet_Users" Association="NewsDBModel.FK_News_aspnet_Users">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <EntitySet Name="Spheres" EntityType="NewsDBModel.Spheres" />
+    <AssociationSet Name="FK_News_Spheres" Association="NewsDBModel.FK_News_Spheres">
+      <End Role="Spheres" EntitySet="Spheres" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <EntitySet Name="Commenter" EntityType="NewsDBModel.Commenter" />
+    <EntitySet Name="Comments" EntityType="NewsDBModel.Comments" />
+    <AssociationSet Name="FK_Comments_Commenter" Association="NewsDBModel.FK_Comments_Commenter">
+      <End Role="Commenter" EntitySet="Commenter" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Comments" Association="NewsDBModel.FK_Comments_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="Comments1" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_News" Association="NewsDBModel.FK_Comments_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <EntitySet Name="Groups" EntityType="NewsDBModel.Groups" />
+    <AssociationSet Name="FK_News_Groups" Association="NewsDBModel.FK_News_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <EntitySet Name="Places" EntityType="NewsDBModel.Places" />
+    <AssociationSet Name="FK_News_Places" Association="NewsDBModel.FK_News_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <EntitySet Name="Newspapers" EntityType="NewsDBModel.Newspapers" />
+    <AssociationSet Name="FK_News_Newspapers" Association="NewsDBModel.FK_News_Newspapers">
+      <End Role="Newspapers" EntitySet="Newspapers" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <EntitySet Name="ContactUs" EntityType="NewsDBModel.ContactUs" />
+    <EntitySet Name="ViewKammash" EntityType="NewsDBModel.ViewKammash" />
+    <EntitySet Name="ViewLastNews" EntityType="NewsDBModel.ViewLastNews" />
+    <EntitySet Name="ViewSlideshow" EntityType="NewsDBModel.ViewSlideshow" />
+    <FunctionImport Name="GetNews" IsComposable="true" ReturnType="Collection(NewsDBModel.GetNews_Result)">
+      <Parameter Name="GroupId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ViewNews" EntityType="NewsDBModel.ViewNews" />
+    <EntitySet Name="ViewCarousel" EntityType="NewsDBModel.ViewCarousel" />
+  </EntityContainer>
+  <EntityType Name="Keywords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Word" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="News" Relationship="NewsDBModel.NewsKeywords" FromRole="Keywords" ToRole="News" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="Author" />
+    <Property Type="String" Name="Title" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Subtitle" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Summary" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Article" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="VisitsNumber" />
+    <Property Type="Int32" Name="Likes" />
+    <Property Type="Int32" Name="Dislikes" />
+    <Property Type="DateTime" Name="PublishDate" Precision="3" />
+    <Property Type="DateTime" Name="InsertDate" ConcurrencyMode="None" Precision="3" />
+    <NavigationProperty Name="Keywords" Relationship="NewsDBModel.NewsKeywords" FromRole="News" ToRole="Keywords" />
+    <Property Type="Boolean" Name="Active" DefaultValue="true" />
+    <NavigationProperty Name="aspnet_Users" Relationship="NewsDBModel.FK_News_aspnet_Users" FromRole="News" ToRole="aspnet_Users" />
+    <Property Type="Int32" Name="GroupId" />
+    <Property Type="Int32" Name="SphereId" />
+    <Property Type="Boolean" Name="Type" />
+    <NavigationProperty Name="Spheres" Relationship="NewsDBModel.FK_News_Spheres" FromRole="News" ToRole="Spheres" />
+    <Property Name="OrderInGroup" Type="Int32" />
+    <NavigationProperty Name="Comments" Relationship="NewsDBModel.FK_Comments_News" FromRole="News" ToRole="Comments" />
+    <Property Type="Int32" Name="PlaceId" />
+    <NavigationProperty Name="Groups" Relationship="NewsDBModel.FK_News_Groups" FromRole="News" ToRole="Groups" />
+    <Property Type="DateTime" Name="EndPublishDate" Precision="3" />
+    <NavigationProperty Name="Places" Relationship="NewsDBModel.FK_News_Places" FromRole="News" ToRole="Places" />
+    <Property Type="String" Name="Introduction" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DirectoryName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainImage" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TheNewsPaperNumberId" />
+    <NavigationProperty Name="Newspapers" Relationship="NewsDBModel.FK_News_Newspapers" FromRole="News" ToRole="Newspapers" />
+    <Property Type="String" Name="AuthorString" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PollsOptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="PollOption" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PollsQuestionsId" />
+    <NavigationProperty Name="PollsQuestions" Relationship="NewsDBModel.FK_PollsOptions_PollsQuestions" FromRole="PollsOptions" ToRole="PollsQuestions" />
+  </EntityType>
+  <EntityType Name="PollsQuestions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="PollQuestion" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PollsOptions" Relationship="NewsDBModel.FK_PollsOptions_PollsQuestions" FromRole="PollsQuestions" ToRole="PollsOptions" />
+  </EntityType>
+  <Association Name="FK_PollsOptions_PollsQuestions">
+    <End Type="NewsDBModel.PollsQuestions" Role="PollsQuestions" Multiplicity="0..1" />
+    <End Type="NewsDBModel.PollsOptions" Role="PollsOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PollsQuestions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PollsOptions">
+        <PropertyRef Name="PollsQuestionsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NewsKeywords">
+    <End Type="NewsDBModel.News" Role="News" Multiplicity="*" />
+    <End Type="NewsDBModel.Keywords" Role="Keywords" Multiplicity="*" />
+  </Association>
+  <EntityType Name="ViewAuthors">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="101" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+    <Property Type="DateTime" Name="LastActivityDate" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="Gender" />
+    <Property Type="Binary" Name="Photo" MaxLength="Max" FixedLength="false" />
+    <Property Type="DateTime" Name="BirthDate" Precision="0" />
+    <Property Type="Int32" Name="CountryId" />
+    <Property Type="String" Name="Address" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Phone" />
+    <Property Type="Int32" Name="UserType" />
+    <Property Type="Boolean" Name="Active" />
+    <NavigationProperty Name="News" Relationship="NewsDBModel.FK_News_aspnet_Users" FromRole="aspnet_Users" ToRole="News" />
+  </EntityType>
+  <Association Name="FK_News_aspnet_Users">
+    <End Type="NewsDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
+    <End Type="NewsDBModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="Author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Spheres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="News" Relationship="NewsDBModel.FK_News_Spheres" FromRole="Spheres" ToRole="News" />
+  </EntityType>
+  <Association Name="FK_News_Spheres">
+    <End Type="NewsDBModel.Spheres" Role="Spheres" Multiplicity="0..1" />
+    <End Type="NewsDBModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Spheres">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="SphereId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Commenter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="RegisterDate" Precision="3" />
+    <NavigationProperty Name="Comments" Relationship="NewsDBModel.FK_Comments_Commenter" FromRole="Commenter" ToRole="Comments" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Comment" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ReplyTo" Nullable="false" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="DateTime" Name="CommentDate" Precision="3" />
+    <Property Type="Int32" Name="NewsId" />
+    <Property Type="Int64" Name="CommenterId" />
+    <NavigationProperty Name="Commenter" Relationship="NewsDBModel.FK_Comments_Commenter" FromRole="Comments" ToRole="Commenter" />
+    <NavigationProperty Name="Comments1" Relationship="NewsDBModel.FK_Comments_Comments" FromRole="Comments" ToRole="Comments1" />
+    <NavigationProperty Name="Comments2" Relationship="NewsDBModel.FK_Comments_Comments" FromRole="Comments1" ToRole="Comments" />
+    <NavigationProperty Name="News" Relationship="NewsDBModel.FK_Comments_News" FromRole="Comments" ToRole="News" />
+    <Property Type="Int32" Name="Likes" />
+    <Property Type="Int32" Name="Dislikes" />
+  </EntityType>
+  <Association Name="FK_Comments_Commenter">
+    <End Type="NewsDBModel.Commenter" Role="Commenter" Multiplicity="0..1" />
+    <End Type="NewsDBModel.Comments" Role="Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commenter">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="CommenterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Comments">
+    <End Type="NewsDBModel.Comments" Role="Comments" Multiplicity="1" />
+    <End Type="NewsDBModel.Comments" Role="Comments1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments1">
+        <PropertyRef Name="ReplyTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_News">
+    <End Type="NewsDBModel.News" Role="News" Multiplicity="0..1" />
+    <End Type="NewsDBModel.Comments" Role="Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="NewsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OrderGroup" />
+    <NavigationProperty Name="News" Relationship="NewsDBModel.FK_News_Groups" FromRole="Groups" ToRole="News" />
+  </EntityType>
+  <Association Name="FK_News_Groups">
+    <End Type="NewsDBModel.Groups" Role="Groups" Multiplicity="0..1" />
+    <End Type="NewsDBModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="News" Relationship="NewsDBModel.FK_News_Places" FromRole="Places" ToRole="News" />
+  </EntityType>
+  <Association Name="FK_News_Places">
+    <End Type="NewsDBModel.Places" Role="Places" Multiplicity="0..1" />
+    <End Type="NewsDBModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Newspapers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Precision="0" />
+    <Property Type="DateTime" Name="InsertDate" Precision="3" />
+    <Property Type="Int32" Name="NumberOfDownloads" />
+    <NavigationProperty Name="News" Relationship="NewsDBModel.FK_News_Newspapers" FromRole="Newspapers" ToRole="News" />
+  </EntityType>
+  <Association Name="FK_News_Newspapers">
+    <End Type="NewsDBModel.Newspapers" Role="Newspapers" Multiplicity="0..1" />
+    <End Type="NewsDBModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Newspapers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="TheNewsPaperNumberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ContactUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Message" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ViewKammash">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Title" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Introduction" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DirectoryName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainImage" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Article" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ViewLastNews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Title" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DirectoryName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainImage" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="InsertDate" Precision="3" />
+    <Property Type="String" Name="Article" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Introduction" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PublishDate" Precision="3" />
+    <Property Type="DateTime" Name="EndPublishDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="ViewSlideshow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Title" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Introduction" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DirectoryName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainImage" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Article" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Subtitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="GetNews_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Subtitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Introduction" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Article" Nullable="true" />
+    <Property Type="String" Name="DirectoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MainImage" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="ViewNews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Guid" Name="Author" />
+    <Property Type="String" Name="Title" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Subtitle" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Introduction" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Summary" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Article" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OrderInGroup" />
+    <Property Type="Int32" Name="VisitsNumber" />
+    <Property Type="Int32" Name="Likes" />
+    <Property Type="Int32" Name="Dislikes" />
+    <Property Type="DateTime" Name="InsertDate" Precision="3" />
+    <Property Type="DateTime" Name="PublishDate" Precision="3" />
+    <Property Type="DateTime" Name="EndPublishDate" Precision="3" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="Int32" Name="GroupId" />
+    <Property Type="Int32" Name="SphereId" />
+    <Property Type="Int32" Name="PlaceId" />
+    <Property Type="Boolean" Name="Type" />
+    <Property Type="String" Name="DirectoryName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MainImage" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TheNewsPaperNumberId" />
+    <Property Type="String" Name="PlaceName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="GroupName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="OrderGroup" />
+  </EntityType>
+  <EntityType Name="ViewCarousel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Subtitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Article" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DirectoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MainImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

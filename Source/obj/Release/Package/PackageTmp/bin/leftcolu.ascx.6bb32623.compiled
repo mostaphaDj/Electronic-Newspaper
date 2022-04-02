@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/UserControls/leftColu.ascx" hash="fffffff7f0117600" filehash="b4219a975bcac8da" flags="110000" assembly="App_Web_ywn31rag" type="ASP.usercontrols_leftcolu_ascx">
+    <filedeps>
+        <filedep name="/Columns/LettersWithoutPoints.ascx" />
+        <filedep name="/Columns/LikeFacebook.ascx" />
+        <filedep name="/Columns/SDF.ascx" />
+        <filedep name="/Columns/Tell.ascx" />
+        <filedep name="/UserControls/leftColu.ascx" />
+        <filedep name="/UserControls/SlideshowImages.ascx" />
+    </filedeps>
+</preserve>

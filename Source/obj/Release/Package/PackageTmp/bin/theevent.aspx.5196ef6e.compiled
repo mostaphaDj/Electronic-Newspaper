@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/NewsView/TheEvent.aspx" hash="fffffff7f0117600" filehash="66773e5af05784dc" flags="110000" assembly="App_Web_hfqeenuv" type="ASP.newsview_theevent_aspx">
+    <filedeps>
+        <filedep name="/Columns/LettersWithoutPoints.ascx" />
+        <filedep name="/Columns/LikeFacebook.ascx" />
+        <filedep name="/Columns/SDF.ascx" />
+        <filedep name="/Columns/Tell.ascx" />
+        <filedep name="/NewsView/NestedMasterNewsView.master" />
+        <filedep name="/NewsView/TheEvent.aspx" />
+        <filedep name="/Site.Master" />
+        <filedep name="/UserControls/FooterUC.ascx" />
+        <filedep name="/UserControls/HeaderUC.ascx" />
+        <filedep name="/UserControls/jqDockFollowUs.ascx" />
+        <filedep name="/UserControls/leftColu.ascx" />
+        <filedep name="/UserControls/leftColuRibbon.ascx" />
+        <filedep name="/UserControls/MainMenu.ascx" />
+        <filedep name="/UserControls/NewsPaperPDF.ascx" />
+        <filedep name="/UserControls/SlideshowImages.ascx" />
+        <filedep name="/UserControls/StickySidePanel.ascx" />
+    </filedeps>
+</preserve>

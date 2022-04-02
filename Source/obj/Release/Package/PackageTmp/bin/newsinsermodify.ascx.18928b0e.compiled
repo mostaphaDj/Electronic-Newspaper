@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/News/NewsInserModify.ascx" hash="fffffff7f0117600" filehash="ffffe893c645b6b1" flags="110000" assembly="App_Web_gajgrpi0" type="ASP.manage_news_newsinsermodify_ascx">
+    <filedeps>
+        <filedep name="/Manage/News/NewsInserModify.ascx" />
+    </filedeps>
+</preserve>

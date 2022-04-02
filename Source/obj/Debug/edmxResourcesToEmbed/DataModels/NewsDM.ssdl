@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="256" />
+    <Property Name="Phone" Type="bigint" />
+    <Property Name="UserType" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Commenter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegisterDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+    <Property Name="ReplyTo" Type="bigint" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CommentDate" Type="datetime" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="Dislikes" Type="int" />
+    <Property Name="NewsId" Type="int" />
+    <Property Name="CommenterId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ContactUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderGroup" Type="int" />
+  </EntityType>
+  <EntityType Name="Keywords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Word" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Author" Type="uniqueidentifier" />
+    <Property Name="AuthorString" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Subtitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="Summary" Type="nvarchar" MaxLength="500" />
+    <Property Name="Article" Type="nvarchar(max)" />
+    <Property Name="OrderInGroup" Type="int" />
+    <Property Name="VisitsNumber" Type="int" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="Dislikes" Type="int" />
+    <Property Name="InsertDate" Type="datetime" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="EndPublishDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="SphereId" Type="int" />
+    <Property Name="PlaceId" Type="int" />
+    <Property Name="Type" Type="bit" />
+    <Property Name="DirectoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="TheNewsPaperNumberId" Type="int" />
+  </EntityType>
+  <EntityType Name="News_Keywords">
+    <Key>
+      <PropertyRef Name="NewsId" />
+      <PropertyRef Name="KeywordId" />
+    </Key>
+    <Property Name="NewsId" Type="int" Nullable="false" />
+    <Property Name="KeywordId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Newspapers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="InsertDate" Type="datetime" />
+    <Property Name="NumberOfDownloads" Type="int" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PollsOptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PollOption" Type="nvarchar" MaxLength="255" />
+    <Property Name="PollsQuestionsId" Type="int" />
+  </EntityType>
+  <EntityType Name="PollsQuestions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PollQuestion" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Spheres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElmustakbalDB.choulino.ViewCarousel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewCarousel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Subtitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="Article" Type="nvarchar(max)" />
+    <Property Name="DirectoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElmustakbalDB.dbo.ViewAuthors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewAuthors">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="101" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElmustakbalDB.dbo.ViewKammash' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewKammash">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="DirectoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Article" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElmustakbalDB.dbo.ViewLastNews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewLastNews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="DirectoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsertDate" Type="datetime" />
+    <Property Name="Article" Type="nvarchar(max)" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="EndPublishDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElmustakbalDB.dbo.ViewNews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewNews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Author" Type="uniqueidentifier" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Subtitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="Summary" Type="nvarchar" MaxLength="500" />
+    <Property Name="Article" Type="nvarchar(max)" />
+    <Property Name="OrderInGroup" Type="int" />
+    <Property Name="VisitsNumber" Type="int" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="Dislikes" Type="int" />
+    <Property Name="InsertDate" Type="datetime" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="EndPublishDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="SphereId" Type="int" />
+    <Property Name="PlaceId" Type="int" />
+    <Property Name="Type" Type="bit" />
+    <Property Name="DirectoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="TheNewsPaperNumberId" Type="int" />
+    <Property Name="PlaceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderGroup" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ElmustakbalDB.dbo.ViewSlideshow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewSlideshow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Subtitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="Article" Type="nvarchar(max)" />
+    <Property Name="DirectoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Comments_Commenter">
+    <End Role="Commenter" Type="Self.Commenter" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commenter">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="CommenterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Comments1">
+    <End Role="Comments" Type="Self.Comments" Multiplicity="1" />
+    <End Role="Comments1" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments1">
+        <PropertyRef Name="ReplyTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_aspnet_Users">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="Author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Keywords_Keywords">
+    <End Role="Keywords" Type="Self.Keywords" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="News_Keywords" Type="Self.News_Keywords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Keywords">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News_Keywords">
+        <PropertyRef Name="KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Newspapers">
+    <End Role="Newspapers" Type="Self.Newspapers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Newspapers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="TheNewsPaperNumberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Places">
+    <End Role="Places" Type="Self.Places" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Spheres">
+    <End Role="Spheres" Type="Self.Spheres" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Spheres">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="SphereId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PollsOptions_PollsQuestions">
+    <End Role="PollsQuestions" Type="Self.PollsQuestions" Multiplicity="0..1" />
+    <End Role="PollsOptions" Type="Self.PollsOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PollsQuestions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PollsOptions">
+        <PropertyRef Name="PollsQuestionsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GroupId" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Subtitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+          <Property Name="Article" Type="nvarchar(max)" />
+          <Property Name="DirectoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MainImage" Type="nvarchar" MaxLength="50" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="NewsDBModelStoreContainer">
+    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commenter" EntityType="Self.Commenter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Keywords" EntityType="Self.Keywords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News_Keywords" EntityType="Self.News_Keywords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Newspapers" EntityType="Self.Newspapers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PollsOptions" EntityType="Self.PollsOptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PollsQuestions" EntityType="Self.PollsQuestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Spheres" EntityType="Self.Spheres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewCarousel" EntityType="Self.ViewCarousel" store:Type="Views" store:Schema="choulino">
+      <DefiningQuery>SELECT 
+[ViewCarousel].[Id] AS [Id], 
+[ViewCarousel].[Title] AS [Title], 
+[ViewCarousel].[Subtitle] AS [Subtitle], 
+[ViewCarousel].[Introduction] AS [Introduction], 
+[ViewCarousel].[Article] AS [Article], 
+[ViewCarousel].[DirectoryName] AS [DirectoryName], 
+[ViewCarousel].[MainImage] AS [MainImage]
+FROM [choulino].[ViewCarousel] AS [ViewCarousel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewAuthors" EntityType="Self.ViewAuthors" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewAuthors].[UserId] AS [UserId], 
+[ViewAuthors].[Name] AS [Name]
+FROM [dbo].[ViewAuthors] AS [ViewAuthors]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewKammash" EntityType="Self.ViewKammash" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewKammash].[Id] AS [Id], 
+[ViewKammash].[Title] AS [Title], 
+[ViewKammash].[Introduction] AS [Introduction], 
+[ViewKammash].[DirectoryName] AS [DirectoryName], 
+[ViewKammash].[MainImage] AS [MainImage], 
+[ViewKammash].[Article] AS [Article]
+FROM [dbo].[ViewKammash] AS [ViewKammash]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewLastNews" EntityType="Self.ViewLastNews" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewLastNews].[Id] AS [Id], 
+[ViewLastNews].[Title] AS [Title], 
+[ViewLastNews].[DirectoryName] AS [DirectoryName], 
+[ViewLastNews].[MainImage] AS [MainImage], 
+[ViewLastNews].[InsertDate] AS [InsertDate], 
+[ViewLastNews].[Article] AS [Article], 
+[ViewLastNews].[Introduction] AS [Introduction], 
+[ViewLastNews].[PublishDate] AS [PublishDate], 
+[ViewLastNews].[EndPublishDate] AS [EndPublishDate]
+FROM [dbo].[ViewLastNews] AS [ViewLastNews]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewNews" EntityType="Self.ViewNews" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewNews].[Id] AS [Id], 
+[ViewNews].[Author] AS [Author], 
+[ViewNews].[Title] AS [Title], 
+[ViewNews].[Subtitle] AS [Subtitle], 
+[ViewNews].[Introduction] AS [Introduction], 
+[ViewNews].[Summary] AS [Summary], 
+[ViewNews].[Article] AS [Article], 
+[ViewNews].[OrderInGroup] AS [OrderInGroup], 
+[ViewNews].[VisitsNumber] AS [VisitsNumber], 
+[ViewNews].[Likes] AS [Likes], 
+[ViewNews].[Dislikes] AS [Dislikes], 
+[ViewNews].[InsertDate] AS [InsertDate], 
+[ViewNews].[PublishDate] AS [PublishDate], 
+[ViewNews].[EndPublishDate] AS [EndPublishDate], 
+[ViewNews].[Active] AS [Active], 
+[ViewNews].[GroupId] AS [GroupId], 
+[ViewNews].[SphereId] AS [SphereId], 
+[ViewNews].[PlaceId] AS [PlaceId], 
+[ViewNews].[Type] AS [Type], 
+[ViewNews].[DirectoryName] AS [DirectoryName], 
+[ViewNews].[MainImage] AS [MainImage], 
+[ViewNews].[TheNewsPaperNumberId] AS [TheNewsPaperNumberId], 
+[ViewNews].[PlaceName] AS [PlaceName], 
+[ViewNews].[GroupName] AS [GroupName], 
+[ViewNews].[OrderGroup] AS [OrderGroup]
+FROM [dbo].[ViewNews] AS [ViewNews]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewSlideshow" EntityType="Self.ViewSlideshow" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewSlideshow].[Id] AS [Id], 
+[ViewSlideshow].[Title] AS [Title], 
+[ViewSlideshow].[Subtitle] AS [Subtitle], 
+[ViewSlideshow].[Introduction] AS [Introduction], 
+[ViewSlideshow].[Article] AS [Article], 
+[ViewSlideshow].[DirectoryName] AS [DirectoryName], 
+[ViewSlideshow].[MainImage] AS [MainImage]
+FROM [dbo].[ViewSlideshow] AS [ViewSlideshow]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Comments_Commenter" Association="Self.FK_Comments_Commenter">
+      <End Role="Commenter" EntitySet="Commenter" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Comments1" Association="Self.FK_Comments_Comments1">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="Comments1" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_aspnet_Users" Association="Self.FK_News_aspnet_Users">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Groups" Association="Self.FK_News_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Keywords_Keywords" Association="Self.FK_News_Keywords_Keywords">
+      <End Role="Keywords" EntitySet="Keywords" />
+      <End Role="News_Keywords" EntitySet="News_Keywords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Newspapers" Association="Self.FK_News_Newspapers">
+      <End Role="Newspapers" EntitySet="Newspapers" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Places" Association="Self.FK_News_Places">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Spheres" Association="Self.FK_News_Spheres">
+      <End Role="Spheres" EntitySet="Spheres" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PollsOptions_PollsQuestions" Association="Self.FK_PollsOptions_PollsQuestions">
+      <End Role="PollsQuestions" EntitySet="PollsQuestions" />
+      <End Role="PollsOptions" EntitySet="PollsOptions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

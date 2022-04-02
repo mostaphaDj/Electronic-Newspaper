@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/CPanelMasterPage.Master" hash="fffffff7f0117600" filehash="c4ba19f99e9ea6e" flags="110000" assembly="App_Web_2tzivyaj" type="ASP.manage_cpanelmasterpage_master">
+    <filedeps>
+        <filedep name="/Manage/CPanelMasterPage.Master" />
+        <filedep name="/Manage/RightColuUC.ascx" />
+    </filedeps>
+</preserve>

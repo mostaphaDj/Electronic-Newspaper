@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Columns/LettersWithoutPoints.ascx" hash="fffffff7f0117600" filehash="3817e264a82e" flags="110000" assembly="App_Web_cpdk1z04" type="ASP.columns_letterswithoutpoints_ascx">
+    <filedeps>
+        <filedep name="/Columns/LettersWithoutPoints.ascx" />
+    </filedeps>
+</preserve>

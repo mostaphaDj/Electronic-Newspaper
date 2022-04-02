@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Authors/ControlAuthor.aspx" hash="fffffff7f0117600" filehash="f8a75c8029a1e2a0" flags="110000" assembly="App_Web_jexwhikc" type="ASP.authors_controlauthor_aspx">
+    <filedeps>
+        <filedep name="/Authors/AuthorNestedMasterPage.master" />
+        <filedep name="/Authors/ControlAuthor.aspx" />
+        <filedep name="/Authors/LeftColuUC.ascx" />
+        <filedep name="/Authors/RightColuUC.ascx" />
+        <filedep name="/Site.Master" />
+        <filedep name="/UserControls/FooterUC.ascx" />
+        <filedep name="/UserControls/HeaderUC.ascx" />
+        <filedep name="/UserControls/jqDockFollowUs.ascx" />
+        <filedep name="/UserControls/MainMenu.ascx" />
+        <filedep name="/UserControls/StickySidePanel.ascx" />
+    </filedeps>
+</preserve>

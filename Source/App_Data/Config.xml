@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <PublishingField>
+    <FromDate>2013-03-10T00:00:00</FromDate>
+    <ToDate>2013-03-09T23:59:00</ToDate>
+  </PublishingField>
+  <Views>
+    <VideoTitle>الفاف تقصي أعضاء</VideoTitle>
+    <Video>//www.youtube.com/embed/B5JjwO4QHN4</Video>
+  </Views>
+  <Visitors>
+    <AllVisitors>458</AllVisitors>
+    <NowVisitors>135</NowVisitors>
+    <TodayVisitors>148</TodayVisitors>
+    <TodayVisitorsDate>2012-08-31T00:00:00</TodayVisitorsDate>
+  </Visitors>
+  <OldDirectory>
+    <Name>
+    </Name>
+  </OldDirectory>
+</config>

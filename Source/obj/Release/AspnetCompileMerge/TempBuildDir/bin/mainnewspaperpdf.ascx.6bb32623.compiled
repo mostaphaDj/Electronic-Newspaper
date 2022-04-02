@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/UserControls/MainNewsPaperPDF.ascx" hash="fffffff7f0117600" filehash="15c98505e64b" flags="110000" assembly="App_Web_cvmzeqmt" type="ASP.usercontrols_mainnewspaperpdf_ascx">
+    <filedeps>
+        <filedep name="/UserControls/MainNewsPaperPDF.ascx" />
+    </filedeps>
+</preserve>

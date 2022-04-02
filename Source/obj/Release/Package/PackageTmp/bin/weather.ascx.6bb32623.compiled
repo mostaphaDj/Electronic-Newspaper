@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/UserControls/Weather.ascx" hash="fffffff7f0117600" filehash="ffffd48d104f95b7" flags="110000" assembly="App_Web_cvmzeqmt" type="ASP.usercontrols_weather_ascx">
+    <filedeps>
+        <filedep name="/UserControls/Weather.ascx" />
+    </filedeps>
+</preserve>

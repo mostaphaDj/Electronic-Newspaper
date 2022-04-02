@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DynamicData/FieldTemplates/Enumeration_Edit.ascx" hash="fffffff7f0117600" filehash="ffffff3110c46964" flags="110000" assembly="App_Web_vxxjzsb5" type="ASP.dynamicdata_fieldtemplates_enumeration_edit_ascx">
+    <filedeps>
+        <filedep name="/DynamicData/FieldTemplates/Enumeration_Edit.ascx" />
+    </filedeps>
+</preserve>

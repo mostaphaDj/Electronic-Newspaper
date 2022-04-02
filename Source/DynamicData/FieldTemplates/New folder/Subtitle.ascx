@@ -1,0 +1,5 @@
+﻿<%@ Control Language="C#" CodeBehind="Title.ascx.cs" Inherits="ElMestakbal.TitleField" %>
+
+<h2 >
+    <asp:Literal runat="server" ID="Literal1" Text="<%# FieldValueString %>" />
+</h2>

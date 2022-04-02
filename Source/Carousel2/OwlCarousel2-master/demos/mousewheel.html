@@ -1,0 +1,131 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../owlcarousel/owl.carousel.css">
+	<link rel="stylesheet" href="../owlcarousel/owl.theme.css">
+
+</head>
+<body>
+    <style>
+        .TopContentPlace .item{
+			background: #008cba;
+			height: 380px;
+			padding: 0px;
+		}
+
+		.TopContentPlace .item .img{
+			width:100%;
+		}
+		
+		.TopContentPlace .item .title{
+
+		}
+		
+		.TopContentPlace .item .subtitle{
+
+		}
+
+		.TopContentPlace .item .p{
+	
+		}
+    </style>
+	
+<div class="TopContentPlace">
+			<h1 class="heading-section">الغنوان</h1>
+			<div class="owl-carousel">
+				<div class="item">
+					<a href="">
+						<img class="img" src="img.jpg" alt="">
+					</a>
+					<h2 class="title">الغنوان</h2>
+					<h3 class="subtitle">العنوان الفرغي</h3>
+					<p>النص</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img class="img" src="img.jpg" alt="">
+					</a>
+					<h2 class="title">الغنوان</h2>
+					<h3 class="subtitle">العنوان الفرغي</h3>
+					<p>النص</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img class="img" src="img.jpg" alt="">
+					</a>
+					<h2 class="title">الغنوان</h2>
+					<h3 class="subtitle">العنوان الفرغي</h3>
+					<p>النص</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img class="img" src="img.jpg" alt="">
+					</a>
+					<h2 class="title">الغنوان</h2>
+					<h3 class="subtitle">العنوان الفرغي</h3>
+					<p>النص</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img class="img" src="img.jpg" alt="">
+					</a>
+					<h2 class="title">الغنوان</h2>
+					<h3 class="subtitle">العنوان الفرغي</h3>
+					<p>النص</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img class="img" src="img.jpg" alt="">
+					</a>
+					<h2 class="title">الغنوان</h2>
+					<h3 class="subtitle">العنوان الفرغي</h3>
+					<p>النص</p>
+				</div>
+	
+			</div>
+</div>
+
+
+<script src="../assets/js/jquery-1.11.0.min.js"></script>
+<script src="../assets/js/jquery.mousewheel.js"></script>
+<script src="../owlcarousel/owl.carousel.js?v=beta.1.8"></script>
+
+<script>
+	jQuery(document).ready(function($) {
+
+	var owl = $('.owl-carousel');
+
+	owl.owlCarousel({
+		loop:true,
+		nav:true,
+		rtl: true,
+		margin:30,
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:2
+			},			
+			960:{
+				items:3
+			},
+			1200:{
+				items:4
+			}
+		}
+	});
+
+	owl.on('mousewheel', function (e) {
+	    if (e.deltaY>0) {
+			owl.trigger('prev.owl');
+	    } else {
+			owl.trigger('next.owl');
+	    }
+	    e.preventDefault();
+	});
+	});
+</script>
+
+</body>
+</html>

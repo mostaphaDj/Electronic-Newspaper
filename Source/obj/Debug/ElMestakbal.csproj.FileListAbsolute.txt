@@ -1,0 +1,107 @@
+F:\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+F:\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+F:\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+F:\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+F:\News paper\ElMestakbal\ElMestakbal\obj\Debug\ResolveAssemblyReference.cache
+F:\News paper\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+F:\News paper\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+D:\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+D:\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+D:\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+D:\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+D:\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+D:\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+D:\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+D:\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+D:\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+D:\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.csprojResolveAssemblyReference.cache
+D:\Programation\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+D:\Programation\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+D:\Programation\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+D:\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+D:\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+D:\Programation\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+D:\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+D:\Programation\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.csprojResolveAssemblyReference.cache
+D:\Programation\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+D:\Programation\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\bin\ElMestakbal.dll
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\bin\ElMestakbal.pdb
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\bin\EntityFramework.dll
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\bin\Telerik.Web.UI.dll
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\bin\EntityFramework.xml
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\bin\Telerik.Web.UI.xml
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\obj\Debug\ElMestakbal.csprojResolveAssemblyReference.cache
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\obj\Debug\ElMestakbal.dll
+F:\Mostapha\Programation\Projects\ElMestakbal - Copy\ElMestakbal\obj\Debug\ElMestakbal.pdb
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.csprojResolveAssemblyReference.cache
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll.config
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll.config
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.csprojResolveAssemblyReference.cache
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Castle.Core.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.SqlServer.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Castle.Core.xml
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.SqlServer.xml
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll.licenses
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.csprojResolveAssemblyReference.cache
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll.config
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Castle.Core.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.SqlServer.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Microsoft.AnalysisServices.AdomdClient.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Castle.Core.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.SqlServer.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.csprojResolveAssemblyReference.cache
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll.licenses
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Debug\ElMestakbal.pdb
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.Spreadsheet.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Core.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Flow.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Spreadsheet.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Zip.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Newtonsoft.Json.dll
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.Spreadsheet.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Core.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Flow.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Spreadsheet.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml
+E:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Windows.Zip.xml

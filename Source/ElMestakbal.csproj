@@ -1,0 +1,1586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D96777EC-ED57-4435-AA86-6AC00586E56D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElMestakbal</RootNamespace>
+    <AssemblyName>ElMestakbal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
+    <PublishDatabases>false</PublishDatabases>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ApplicationServices-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\NewsDB.mdf%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\ApplicationServices-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="NewsDBEntities-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\NewsDB.mdf%3bIntegrated Security=True%3bApplication Name=EntityFramework%3bUser Instance=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\NewsDBEntities-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.Spreadsheet">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\..\AdditionalLibraries\Bin45\Telerik.Web.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2016.1.113.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2016.1.113.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\..\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\..\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\..\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\..\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\..\AdditionalLibraries\Bin45\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_DataPublic\Background\Background_Ramadan.jpg" />
+    <Content Include="App_DataPublic\Background\Background_Aiid.jpg" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files.jpg" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\defaultflipsound.mp3" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\info.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search1.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search10.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search11.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search12.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search13.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search14.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search15.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search16.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search17.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search18.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search19.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search2.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search20.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search21.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search22.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search23.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search24.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search25.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search26.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search27.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search28.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search29.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search3.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search30.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search31.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search32.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search33.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search34.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search35.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search36.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search37.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search38.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search39.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search4.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search40.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search41.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search42.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search43.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search44.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search45.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search46.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search47.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search48.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search49.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search5.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search50.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search51.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search52.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search53.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search6.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search7.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search8.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\search9.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\search\searchtext.xml" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\windowcontent.jpg" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\images\Text.txt" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\index.html" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\movie.swf" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\ElMaanaNewspaper.aspx" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\PDFArchive\Text.txt" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\RadUploadTemp\Text.txt" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\windowcontent.jpg" />
+    <Content Include="App_DataPublic\PDF\images\Text.txt" />
+    <Content Include="App_DataPublic\PDF\PDFArchive\Text.txt" />
+    <Content Include="App_DataPublic\PDF\RadUploadTemp\Text.txt" />
+    <Content Include="App_DataPublic\PDF\windowcontent.jpg" />
+    <Content Include="App_DataPublic\Publicities\Config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_DataPublic\Publicities\publicityHeader.jpg" />
+    <Content Include="App_Data\Config.xml" />
+    <Content Include="Authors\LeftColuUC.ascx" />
+    <Content Include="Authors\RightColuUC.ascx" />
+    <Content Include="Carousel\assets\js\app.js" />
+    <Content Include="Carousel\assets\js\devices.demo.js" />
+    <Content Include="Carousel\assets\js\foundation.min.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.abide.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.accordion.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.alert.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.clearing.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.dropdown.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.equalizer.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.interchange.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.joyride.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.magellan.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.offcanvas.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.orbit.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.reveal.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.slider.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.tab.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.tooltip.js" />
+    <Content Include="Carousel\assets\js\foundation\foundation.topbar.js" />
+    <Content Include="Carousel\assets\js\highlight\highlight.pack.js" />
+    <Content Include="Carousel\assets\js\highlight\styles\arta.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\ascetic.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-dune.dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-dune.light.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-forest.dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-forest.light.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-heath.dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-heath.light.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-lakeside.dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-lakeside.light.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-seaside.dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\atelier-seaside.light.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\brown_paper.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\brown_papersq.png" />
+    <Content Include="Carousel\assets\js\highlight\styles\dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\default.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\docco.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\far.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\foundation.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\github.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\googlecode.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\idea.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\ir_black.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\magula.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\mono-blue.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\monokai.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\monokai_sublime.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\obsidian.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\paraiso.dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\paraiso.light.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\pojoaque.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\pojoaque.jpg" />
+    <Content Include="Carousel\assets\js\highlight\styles\railscasts.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\rainbow.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\school_book.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\school_book.png" />
+    <Content Include="Carousel\assets\js\highlight\styles\solarized_dark.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\solarized_light.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\sunburst.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\tomorrow-night-blue.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\tomorrow-night-bright.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\tomorrow-night-eighties.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\tomorrow-night.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\tomorrow.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\vs.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\xcode.css" />
+    <Content Include="Carousel\assets\js\highlight\styles\zenburn.css" />
+    <Content Include="Carousel\assets\js\jquery-1.11.0.min.js" />
+    <Content Include="Carousel\assets\js\jquery.mousewheel.js" />
+    <Content Include="Carousel\assets\js\vendor\fastclick.js" />
+    <Content Include="Carousel\assets\js\vendor\jquery.cookie.js" />
+    <Content Include="Carousel\assets\js\vendor\jquery.js" />
+    <Content Include="Carousel\assets\js\vendor\modernizr.js" />
+    <Content Include="Carousel\assets\js\vendor\placeholder.js" />
+    <Content Include="Carousel\assets\js\zepto.data.js" />
+    <Content Include="Carousel\assets\js\zepto.min.js" />
+    <Content Include="Carousel\owlcarousel\ajax-loader.gif" />
+    <Content Include="Carousel\owlcarousel\owl-video-play.png" />
+    <Content Include="Carousel\owlcarousel\owl.carousel.css" />
+    <Content Include="Carousel\owlcarousel\owl.carousel.js" />
+    <Content Include="Carousel\owlcarousel\owl.theme.css" />
+    <Content Include="Columns\Down.ascx" />
+    <Content Include="Columns\Images\bearTrap.png" />
+    <Content Include="Columns\Images\Down.png" />
+    <Content Include="Columns\Images\LettersWithoutPoints.png" />
+    <Content Include="Columns\Images\LikeFacebook.png" />
+    <Content Include="Columns\Images\SDF.png" />
+    <Content Include="Columns\Images\Tell.png" />
+    <Content Include="Columns\Images\Up.png" />
+    <Content Include="Columns\LettersWithoutPoints.ascx" />
+    <Content Include="Columns\LikeFacebook.ascx" />
+    <Content Include="Columns\SDF.ascx" />
+    <Content Include="Columns\Tell.ascx" />
+    <Content Include="Columns\Up.ascx" />
+    <Content Include="Compteur_\Default.aspx" />
+    <Content Include="DefaultError.aspx" />
+    <Content Include="DynamicData\FieldTemplates\Active.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Active_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Article.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Article_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Author.ascx" />
+    <Content Include="DynamicData\FieldTemplates\AuthorString.ascx" />
+    <Content Include="DynamicData\FieldTemplates\AuthorString_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Author_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Title.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Title_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\EndPublishDate.ascx" />
+    <Content Include="DynamicData\FieldTemplates\EndPublishDate_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MainImage.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MainImage_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MultipleFileUpload.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MultipleFileUploadImageEditor.aspx" />
+    <Content Include="DynamicData\FieldTemplates\MultipleFileUpload_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\OrderInGroup_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\PublishDate_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Group.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Group_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ManyToMany.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Place.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Place_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Sphere.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Sphere_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Type.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Type_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Url.ascx" />
+    <Content Include="Images\c.jpg" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\Down.png" />
+    <Content Include="Images\DownHover.png" />
+    <Content Include="Images\download-2.png" />
+    <Content Include="Images\Empty.jpg" />
+    <Content Include="Images\file_add.png" />
+    <Content Include="Images\Home.png" />
+    <Content Include="Images\b.jpg" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\FollowUs\Send_Message.png" />
+    <Content Include="Images\FollowUs\facebook.png" />
+    <Content Include="Images\FollowUs\google.png" />
+    <Content Include="Images\FollowUs\rss.png" />
+    <Content Include="Images\FollowUs\twitter.png" />
+    <Content Include="Images\FollowUs\Youtube.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\MaunMemu.jpg" />
+    <Content Include="Images\MaunMemu.png" />
+    <Content Include="Images\PDFTitle.png" />
+    <Content Include="Images\svwloader.gif" />
+    <Content Include="favicon.ico" />
+    <Content Include="Manage\Accounts\ChangePassword.aspx" />
+    <Content Include="Manage\Accounts\ModifyPersonalAccount.aspx" />
+    <Content Include="Manage\News\ChangePhotos.aspx" />
+    <Content Include="Manage\News\ChangeVideo.aspx" />
+    <Content Include="Manage\News\InsertNews.aspx" />
+    <Content Include="Manage\News\NewsModify.aspx" />
+    <Content Include="Manage\News\PublishPDF.aspx" />
+    <Content Include="App_DataPublic\PDF\files\defaultflipsound.mp3" />
+    <Content Include="App_DataPublic\PDF\files\info.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_DataPublic\PDF\files\search\search10.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search11.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search12.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search13.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search14.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search15.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search16.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search17.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search18.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search19.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search2.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search20.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search21.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search22.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search23.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search24.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search25.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search26.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search27.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search28.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search29.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search3.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search30.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search31.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search32.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search33.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search34.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search35.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search36.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search37.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search38.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search39.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search4.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search40.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search41.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search42.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search43.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search44.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search45.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search46.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search47.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search48.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search49.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search5.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search50.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search51.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search52.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search53.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search6.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search7.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search8.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\search9.xml" />
+    <Content Include="App_DataPublic\PDF\files\search\searchtext.xml" />
+    <Content Include="App_DataPublic\PDF\files\windowcontent.jpg" />
+    <Content Include="App_DataPublic\PDF\index.html" />
+    <Content Include="App_DataPublic\PDF\movie.swf" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\prev.png" />
+    <Content Include="Images\ScrollTo\BackToTop.png" />
+    <Content Include="Images\ScrollTo\ScrollTo.png" />
+    <Content Include="Images\ScrollTo\ScrollToBottom.png" />
+    <Content Include="Images\Pencil.png" />
+    <Content Include="Images\Up.png" />
+    <Content Include="Images\UpHover.png" />
+    <Content Include="Manage\Accounts\ManageTasks.aspx" />
+    <Content Include="Manage\News\BreakingNews.aspx" />
+    <Content Include="Manage\News\DeployFlashNewsPaper.aspx" />
+    <Content Include="Manage\News\Groups.aspx" />
+    <Content Include="Manage\Accounts\Register.aspx" />
+    <Content Include="Manage\Accounts\ModifyUsers.aspx" />
+    <Content Include="Manage\News\NewsInserModify.ascx" />
+    <Content Include="Manage\News\TimingOfThePublishing.aspx" />
+    <Content Include="App_DataPublic\PDF\Newspaper.aspx" />
+    <Content Include="Manage\Pub\Background.aspx" />
+    <Content Include="Manage\Pub\Pub.aspx" />
+    <Content Include="NewsView\InternationalNews.aspx" />
+    <Content Include="NewsView\NationalNews.aspx" />
+    <Content Include="NewsView\NewsViewListByGroups.aspx" />
+    <Content Include="NewsView\TheEvent.aspx" />
+    <Content Include="Public\About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Authors\ControlAuthor.aspx" />
+    <Content Include="Manage\ControlPanel.aspx" />
+    <Content Include="Manage\LeftColuUC.ascx" />
+    <Content Include="Manage\RightColuUC.ascx">
+      <BrowseToURL>~/Manage/RightColuUC.ascx</BrowseToURL>
+    </Content>
+    <Content Include="Public\ContactUs.aspx" />
+    <Content Include="Manage\CPanelMasterPage.Master" />
+    <Content Include="App_DataPublic\News\Resources\RadUploadTemp\RadUploadTestFile" />
+    <Content Include="App_Data\RadUploadTemp\RadUploadTestFile" />
+    <Content Include="Manage\Accounts\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Manage\CPanelNestedMasterPage.master" />
+    <Content Include="Carousel\assets\js\highlight\CHANGES.md" />
+    <Content Include="Carousel\assets\js\highlight\LICENSE" />
+    <Content Include="Carousel\assets\js\highlight\README.md" />
+    <Content Include="Carousel\assets\js\highlight\README.ru.md" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\files\binder2.pdf" />
+    <Content Include="App_DataPublic\PDF\ElMalahik\ElMaana\RadUploadTemp\RadUploadTestFile" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Images\dinpattern-stripe.gif" />
+    <Content Include="NewsView\News.aspx" />
+    <Content Include="Scripts\featurify.js" />
+    <Content Include="Scripts\featurify.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery-2.0.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.0.js" />
+    <Content Include="Scripts\jquery-2.0.0.min.js" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-sticklr.js" />
+    <Content Include="Scripts\jquery-sticklr.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.19.custom.min.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.jqdock.min.js" />
+    <Content Include="Scripts\jquery.localscroll-min.js" />
+    <Content Include="Scripts\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\jquery.slideViewerPro_.1.5.js" />
+    <Content Include="Scripts\jquery.spasticNav.js" />
+    <Content Include="Slideshow\css\sliderkit-core.css" />
+    <Content Include="Slideshow\css\sliderkit-demos-ie6.css" />
+    <Content Include="Slideshow\css\sliderkit-demos-ie7.css" />
+    <Content Include="Slideshow\css\sliderkit-demos-ie8.css" />
+    <Content Include="Slideshow\css\sliderkit-demos.css" />
+    <Content Include="Slideshow\css\sliderkit-site-ltie8.css" />
+    <Content Include="Slideshow\css\sliderkit-site.css" />
+    <Content Include="Slideshow\images\arrows-h-big.png" />
+    <Content Include="Slideshow\images\arrows-h-black.gif" />
+    <Content Include="Slideshow\images\arrows-h-btn.gif" />
+    <Content Include="Slideshow\images\arrows-h-gray.gif" />
+    <Content Include="Slideshow\images\arrows-h.png" />
+    <Content Include="Slideshow\images\arrows-v-black.gif" />
+    <Content Include="Slideshow\images\arrows-v-gray.gif" />
+    <Content Include="Slideshow\images\arrows-v.png" />
+    <Content Include="Slideshow\images\bullet-off.png" />
+    <Content Include="Slideshow\images\bullet-on.png" />
+    <Content Include="Slideshow\images\doc\doc-elements.jpg" />
+    <Content Include="Slideshow\images\doc\doc-elements_fr.jpg" />
+    <Content Include="Slideshow\images\h-arrows-round.gif" />
+    <Content Include="Slideshow\images\newslider-arrow-up.gif" />
+    <Content Include="Slideshow\images\newslider-arrow.gif" />
+    <Content Include="Slideshow\images\photos\medium\sample-01.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-02.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-03.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-04.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-05.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-06.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-07.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-08.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-09.jpg" />
+    <Content Include="Slideshow\images\photos\medium\sample-10.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-01.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-02.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-03.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-04.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-05.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-06.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-07.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-08.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-09.jpg" />
+    <Content Include="Slideshow\images\photos\mini\sample-10.jpg" />
+    <Content Include="Slideshow\images\photos\sample-01-v.jpg" />
+    <Content Include="Slideshow\images\photos\sample-01.jpg" />
+    <Content Include="Slideshow\images\photos\sample-02-v.jpg" />
+    <Content Include="Slideshow\images\photos\sample-02.jpg" />
+    <Content Include="Slideshow\images\photos\sample-03-v.jpg" />
+    <Content Include="Slideshow\images\photos\sample-03.jpg" />
+    <Content Include="Slideshow\images\photos\sample-04.jpg" />
+    <Content Include="Slideshow\images\photos\sample-05.jpg" />
+    <Content Include="Slideshow\images\photos\sample-06.jpg" />
+    <Content Include="Slideshow\images\photos\sample-07.jpg" />
+    <Content Include="Slideshow\images\photos\sample-08.jpg" />
+    <Content Include="Slideshow\images\photos\sample-09.jpg" />
+    <Content Include="Slideshow\images\photos\sample-10.jpg" />
+    <Content Include="Slideshow\images\photos\small\sample-01.jpg" />
+    <Content Include="Slideshow\images\photos\small\sample-02.jpg" />
+    <Content Include="Slideshow\images\photos\small\sample-03.jpg" />
+    <Content Include="Slideshow\images\photos\small\sample-04.jpg" />
+    <Content Include="Slideshow\images\photos\small\sample-05.jpg" />
+    <Content Include="Slideshow\images\photos\small\sample-06.jpg" />
+    <Content Include="Slideshow\images\photos\small\sample-07.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-01.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-02.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-03.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-04.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-05.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-06.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-07.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-08.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-09.jpg" />
+    <Content Include="Slideshow\images\photos\thumb\sample-10.jpg" />
+    <Content Include="Slideshow\images\slider-arrow-left.gif" />
+    <Content Include="Slideshow\images\slider-arrow-right.gif" />
+    <Content Include="Slideshow\images\slideshow-btns.gif" />
+    <Content Include="Slideshow\images\softpedia_pick_award_m.gif" />
+    <Content Include="Slideshow\images\tabs-menu.gif" />
+    <Content Include="Slideshow\images\timer-img01.gif" />
+    <Content Include="Slideshow\images\ui.totop.png" />
+    <Content Include="Slideshow\js\external\jquery.mousewheel.min.js" />
+    <Content Include="Slideshow\js\external\jquery.supertoc.js" />
+    <Content Include="Slideshow\js\external\jquery.supertoc.min.js" />
+    <Content Include="Slideshow\js\external\jquery.ui.totop.js" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\css\jquery.lightbox-0.5.css" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\images\lightbox-blank.gif" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\images\lightbox-btn-close.gif" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\images\lightbox-btn-next.gif" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\images\lightbox-btn-prev.gif" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\images\lightbox-ico-loading.gif" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\index.html" />
+    <Content Include="Slideshow\js\external\lightbox\jquery-lightbox\js\jquery.lightbox-0.5.pack.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.counter.1.0.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.counter.1.0.pack.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.delaycaptions.1.1.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.delaycaptions.1.1.pack.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.imagefx.1.0.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.imagefx.1.0.pack.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.timer.1.0.js" />
+    <Content Include="Slideshow\js\sliderkit\addons\sliderkit.timer.1.0.pack.js" />
+    <Content Include="Slideshow\js\sliderkit\jquery.sliderkit.1.9.2.js" />
+    <Content Include="Slideshow\js\sliderkit\jquery.sliderkit.1.9.2.pack.js" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeueBold\HelveticaNeueW23forSKY-Bd.svg" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeue\HelveticaNeueW23forSKY-Reg.svg" />
+    <Content Include="Styles\Fonts\Neo Sans Arabic\Fonts.css" />
+    <Content Include="Styles\Fonts\Neo Sans Arabic\NeoSansArabic.gif" />
+    <Content Include="Styles\Fonts\Neo Sans Arabic\NeoSansArabic.svg" />
+    <Content Include="Styles\Fonts\Palatino\palatino.svg" />
+    <Content Include="Styles\jquery-sticklr-dark-color.css" />
+    <Content Include="Styles\jquery-sticklr-light-color.css" />
+    <Content Include="Styles\RadEditor_RTL\EditorContentArea_RTL.css" />
+    <Content Include="Styles\RadEditor_RTL\Editor_RTL.css" />
+    <Content Include="Styles\RadEditor_RTL\RadEditor_Dialogs_RTL.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Styles\diapo.css" />
+    <Content Include="Styles\svwp_style.css" />
+    <Content Include="UserControls\leftColu.ascx" />
+    <Content Include="UserControls\FooterUC.ascx" />
+    <Content Include="UserControls\HeaderUC.ascx" />
+    <Content Include="UserControls\jqDockFollowUs.ascx" />
+    <Content Include="UserControls\LastNewsH.ascx" />
+    <Content Include="UserControls\LastNewsV.ascx" />
+    <Content Include="UserControls\leftColuRibbon.ascx" />
+    <Content Include="UserControls\ListNews.ascx" />
+    <Content Include="UserControls\MainMenu.ascx" />
+    <Content Include="UserControls\MainNewsPaperPDF.ascx" />
+    <Content Include="UserControls\NewsPaperPDF.ascx" />
+    <Content Include="UserControls\PubHeader.ascx" />
+    <Content Include="UserControls\Slideshow.ascx" />
+    <Content Include="UserControls\SlideshowImages.ascx" />
+    <Content Include="UserControls\StickySidePanel.ascx" />
+    <Content Include="UserControls\TopContentPlace.ascx" />
+    <Content Include="UserControls\Weather.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_DataPublic\PDF\ElMalahik\ElMaana\ElMaanaNewspaper.aspx.cs">
+      <DependentUpon>ElMaanaNewspaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_DataPublic\PDF\ElMalahik\ElMaana\ElMaanaNewspaper.aspx.designer.cs">
+      <DependentUpon>ElMaanaNewspaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authors\LeftColuUC.ascx.cs">
+      <DependentUpon>LeftColuUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authors\LeftColuUC.ascx.designer.cs">
+      <DependentUpon>LeftColuUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Authors\RightColuUC.ascx.cs">
+      <DependentUpon>RightColuUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authors\RightColuUC.ascx.designer.cs">
+      <DependentUpon>RightColuUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Columns\Down.ascx.cs">
+      <DependentUpon>Down.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Columns\Down.ascx.designer.cs">
+      <DependentUpon>Down.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Columns\LettersWithoutPoints.ascx.cs">
+      <DependentUpon>LettersWithoutPoints.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Columns\LettersWithoutPoints.ascx.designer.cs">
+      <DependentUpon>LettersWithoutPoints.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Columns\LikeFacebook.ascx.cs">
+      <DependentUpon>LikeFacebook.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Columns\LikeFacebook.ascx.designer.cs">
+      <DependentUpon>LikeFacebook.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Columns\SDF.ascx.cs">
+      <DependentUpon>SDF.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Columns\SDF.ascx.designer.cs">
+      <DependentUpon>SDF.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Columns\Tell.ascx.cs">
+      <DependentUpon>Tell.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Columns\Tell.ascx.designer.cs">
+      <DependentUpon>Tell.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Columns\Up.ascx.cs">
+      <DependentUpon>Up.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Columns\Up.ascx.designer.cs">
+      <DependentUpon>Up.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Compteur_\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compteur_\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\EntitiesPartial.cs" />
+    <Compile Include="DefaultError.aspx.cs">
+      <DependentUpon>DefaultError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultError.aspx.designer.cs">
+      <DependentUpon>DefaultError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Active.ascx.cs">
+      <DependentUpon>Active.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Active.ascx.designer.cs">
+      <DependentUpon>Active.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Active_Edit.ascx.cs">
+      <DependentUpon>Active_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Active_Edit.ascx.designer.cs">
+      <DependentUpon>Active_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Article.ascx.cs">
+      <DependentUpon>Article.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Article.ascx.designer.cs">
+      <DependentUpon>Article.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Article_Edit.ascx.cs">
+      <DependentUpon>Article_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Article_Edit.ascx.designer.cs">
+      <DependentUpon>Article_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Author.ascx.cs">
+      <DependentUpon>Author.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Author.ascx.designer.cs">
+      <DependentUpon>Author.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\AuthorString.ascx.cs">
+      <DependentUpon>AuthorString.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\AuthorString.ascx.designer.cs">
+      <DependentUpon>AuthorString.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\AuthorString_Edit.ascx.cs">
+      <DependentUpon>AuthorString_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\AuthorString_Edit.ascx.designer.cs">
+      <DependentUpon>AuthorString_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Author_Edit.ascx.cs">
+      <DependentUpon>Author_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Author_Edit.ascx.designer.cs">
+      <DependentUpon>Author_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Title.ascx.cs">
+      <DependentUpon>Title.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Title.ascx.designer.cs">
+      <DependentUpon>Title.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Title_Edit.ascx.cs">
+      <DependentUpon>Title_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Title_Edit.ascx.designer.cs">
+      <DependentUpon>Title_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EndPublishDate.ascx.cs">
+      <DependentUpon>EndPublishDate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EndPublishDate.ascx.designer.cs">
+      <DependentUpon>EndPublishDate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EndPublishDate_Edit.ascx.cs">
+      <DependentUpon>EndPublishDate_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EndPublishDate_Edit.ascx.designer.cs">
+      <DependentUpon>EndPublishDate_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MainImage.ascx.cs">
+      <DependentUpon>MainImage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MainImage.ascx.designer.cs">
+      <DependentUpon>MainImage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MainImage_Edit.ascx.cs">
+      <DependentUpon>MainImage_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MainImage_Edit.ascx.designer.cs">
+      <DependentUpon>MainImage_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultipleFileUpload.ascx.cs">
+      <DependentUpon>MultipleFileUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultipleFileUpload.ascx.designer.cs">
+      <DependentUpon>MultipleFileUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultipleFileUploadImageEditor.aspx.cs">
+      <DependentUpon>MultipleFileUploadImageEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultipleFileUploadImageEditor.aspx.designer.cs">
+      <DependentUpon>MultipleFileUploadImageEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultipleFileUpload_Edit.ascx.cs">
+      <DependentUpon>MultipleFileUpload_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultipleFileUpload_Edit.ascx.designer.cs">
+      <DependentUpon>MultipleFileUpload_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\OrderInGroup_Edit.ascx.cs">
+      <DependentUpon>OrderInGroup_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\OrderInGroup_Edit.ascx.designer.cs">
+      <DependentUpon>OrderInGroup_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\PublishDate_Edit.ascx.cs">
+      <DependentUpon>PublishDate_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\PublishDate_Edit.ascx.designer.cs">
+      <DependentUpon>PublishDate_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Group.ascx.cs">
+      <DependentUpon>Group.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Group.ascx.designer.cs">
+      <DependentUpon>Group.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Group_Edit.ascx.cs">
+      <DependentUpon>Group_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Group_Edit.ascx.designer.cs">
+      <DependentUpon>Group_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.cs">
+      <DependentUpon>ManyToMany.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany.ascx.designer.cs">
+      <DependentUpon>ManyToMany.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.cs">
+      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ManyToMany_Edit.ascx.designer.cs">
+      <DependentUpon>ManyToMany_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Place.ascx.cs">
+      <DependentUpon>Place.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Place.ascx.designer.cs">
+      <DependentUpon>Place.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Place_Edit.ascx.cs">
+      <DependentUpon>Place_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Place_Edit.ascx.designer.cs">
+      <DependentUpon>Place_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Sphere.ascx.cs">
+      <DependentUpon>Sphere.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Sphere.ascx.designer.cs">
+      <DependentUpon>Sphere.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Sphere_Edit.ascx.cs">
+      <DependentUpon>Sphere_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Sphere_Edit.ascx.designer.cs">
+      <DependentUpon>Sphere_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Type.ascx.cs">
+      <DependentUpon>Type.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Type.ascx.designer.cs">
+      <DependentUpon>Type.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Type_Edit.ascx.cs">
+      <DependentUpon>Type_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Type_Edit.ascx.designer.cs">
+      <DependentUpon>Type_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.designer.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Accounts\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Accounts\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Accounts\ManageTasks.aspx.cs">
+      <DependentUpon>ManageTasks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Accounts\ManageTasks.aspx.designer.cs">
+      <DependentUpon>ManageTasks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Accounts\ModifyPersonalAccount.aspx.cs">
+      <DependentUpon>ModifyPersonalAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Accounts\ModifyPersonalAccount.aspx.designer.cs">
+      <DependentUpon>ModifyPersonalAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\CPanelMasterPage.Master.cs">
+      <DependentUpon>CPanelMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\CPanelMasterPage.Master.designer.cs">
+      <DependentUpon>CPanelMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\CPanelNestedMasterPage.master.cs">
+      <DependentUpon>CPanelNestedMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\CPanelNestedMasterPage.master.designer.cs">
+      <DependentUpon>CPanelNestedMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\BreakingNews.aspx.cs">
+      <DependentUpon>BreakingNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\BreakingNews.aspx.designer.cs">
+      <DependentUpon>BreakingNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\ChangePhotos.aspx.cs">
+      <DependentUpon>ChangePhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\ChangePhotos.aspx.designer.cs">
+      <DependentUpon>ChangePhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\ChangeVideo.aspx.cs">
+      <DependentUpon>ChangeVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\ChangeVideo.aspx.designer.cs">
+      <DependentUpon>ChangeVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\DeployFlashNewsPaper.aspx.cs">
+      <DependentUpon>DeployFlashNewsPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\DeployFlashNewsPaper.aspx.designer.cs">
+      <DependentUpon>DeployFlashNewsPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\Groups.aspx.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\Groups.aspx.designer.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Accounts\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Accounts\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Accounts\ModifyUsers.aspx.cs">
+      <DependentUpon>ModifyUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Accounts\ModifyUsers.aspx.designer.cs">
+      <DependentUpon>ModifyUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\InsertNews.aspx.cs">
+      <DependentUpon>InsertNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\InsertNews.aspx.designer.cs">
+      <DependentUpon>InsertNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\NewsInserModify.ascx.cs">
+      <DependentUpon>NewsInserModify.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\NewsInserModify.ascx.designer.cs">
+      <DependentUpon>NewsInserModify.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\NewsModify.aspx.cs">
+      <DependentUpon>NewsModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\NewsModify.aspx.designer.cs">
+      <DependentUpon>NewsModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\PDFConvert.cs" />
+    <Compile Include="Manage\News\PublishPDF.aspx.cs">
+      <DependentUpon>PublishPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\PublishPDF.aspx.designer.cs">
+      <DependentUpon>PublishPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\News\TimingOfThePublishing.aspx.cs">
+      <DependentUpon>TimingOfThePublishing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\News\TimingOfThePublishing.aspx.designer.cs">
+      <DependentUpon>TimingOfThePublishing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_DataPublic\PDF\Newspaper.aspx.cs">
+      <DependentUpon>Newspaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_DataPublic\PDF\Newspaper.aspx.designer.cs">
+      <DependentUpon>Newspaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Pub\Background.aspx.cs">
+      <DependentUpon>Background.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Pub\Background.aspx.designer.cs">
+      <DependentUpon>Background.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Pub\Pub.aspx.cs">
+      <DependentUpon>Pub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Pub\Pub.aspx.designer.cs">
+      <DependentUpon>Pub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsView\InternationalNews.aspx.cs">
+      <DependentUpon>InternationalNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsView\InternationalNews.aspx.designer.cs">
+      <DependentUpon>InternationalNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsView\NationalNews.aspx.cs">
+      <DependentUpon>NationalNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsView\NationalNews.aspx.designer.cs">
+      <DependentUpon>NationalNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsView\NestedMasterNewsView.master.cs">
+      <DependentUpon>NestedMasterNewsView.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsView\NestedMasterNewsView.master.designer.cs">
+      <DependentUpon>NestedMasterNewsView.master</DependentUpon>
+    </Compile>
+    <Compile Include="NewsView\NewsViewListByGroups.aspx.cs">
+      <DependentUpon>NewsViewListByGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsView\NewsViewListByGroups.aspx.designer.cs">
+      <DependentUpon>NewsViewListByGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsView\TheEvent.aspx.cs">
+      <DependentUpon>TheEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsView\TheEvent.aspx.designer.cs">
+      <DependentUpon>TheEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Public\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authors\AuthorNestedMasterPage.master.cs">
+      <DependentUpon>AuthorNestedMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authors\AuthorNestedMasterPage.master.designer.cs">
+      <DependentUpon>AuthorNestedMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Authors\ControlAuthor.aspx.cs">
+      <DependentUpon>ControlAuthor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authors\ControlAuthor.aspx.designer.cs">
+      <DependentUpon>ControlAuthor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ControlPanel.aspx.cs">
+      <DependentUpon>ControlPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\ControlPanel.aspx.designer.cs">
+      <DependentUpon>ControlPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\LeftColuUC.ascx.cs">
+      <DependentUpon>LeftColuUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\LeftColuUC.ascx.designer.cs">
+      <DependentUpon>LeftColuUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\RightColuUC.ascx.cs">
+      <DependentUpon>RightColuUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\RightColuUC.ascx.designer.cs">
+      <DependentUpon>RightColuUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\NewsDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="NewsView\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsView\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Public\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\leftColu.ascx.cs">
+      <DependentUpon>leftColu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\leftColu.ascx.designer.cs">
+      <DependentUpon>leftColu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FooterUC.ascx.cs">
+      <DependentUpon>FooterUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FooterUC.ascx.designer.cs">
+      <DependentUpon>FooterUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HeaderUC.ascx.cs">
+      <DependentUpon>HeaderUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HeaderUC.ascx.designer.cs">
+      <DependentUpon>HeaderUC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\jqDockFollowUs.ascx.cs">
+      <DependentUpon>jqDockFollowUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\jqDockFollowUs.ascx.designer.cs">
+      <DependentUpon>jqDockFollowUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LastNewsH.ascx.cs">
+      <DependentUpon>LastNewsH.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LastNewsH.ascx.designer.cs">
+      <DependentUpon>LastNewsH.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LastNewsV.ascx.cs">
+      <DependentUpon>LastNewsV.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LastNewsV.ascx.designer.cs">
+      <DependentUpon>LastNewsV.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\leftColuRibbon.ascx.cs">
+      <DependentUpon>leftColuRibbon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\leftColuRibbon.ascx.designer.cs">
+      <DependentUpon>leftColuRibbon.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ListNews.ascx.cs">
+      <DependentUpon>ListNews.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ListNews.ascx.designer.cs">
+      <DependentUpon>ListNews.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MainMenu.ascx.cs">
+      <DependentUpon>MainMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MainMenu.ascx.designer.cs">
+      <DependentUpon>MainMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MainNewsPaperPDF.ascx.cs">
+      <DependentUpon>MainNewsPaperPDF.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MainNewsPaperPDF.ascx.designer.cs">
+      <DependentUpon>MainNewsPaperPDF.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NewsPaperPDF.ascx.cs">
+      <DependentUpon>NewsPaperPDF.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NewsPaperPDF.ascx.designer.cs">
+      <DependentUpon>NewsPaperPDF.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PubHeader.ascx.cs">
+      <DependentUpon>PubHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PubHeader.ascx.designer.cs">
+      <DependentUpon>PubHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Slideshow.ascx.cs">
+      <DependentUpon>Slideshow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Slideshow.ascx.designer.cs">
+      <DependentUpon>Slideshow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SlideshowImages.ascx.cs">
+      <DependentUpon>SlideshowImages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SlideshowImages.ascx.designer.cs">
+      <DependentUpon>SlideshowImages.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StickySidePanel.ascx.cs">
+      <DependentUpon>StickySidePanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\StickySidePanel.ascx.designer.cs">
+      <DependentUpon>StickySidePanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TopContentPlace.ascx.cs">
+      <DependentUpon>TopContentPlace.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TopContentPlace.ascx.designer.cs">
+      <DependentUpon>TopContentPlace.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Weather.ascx.cs">
+      <DependentUpon>Weather.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Weather.ascx.designer.cs">
+      <DependentUpon>Weather.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DataModels\NewsDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewsDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Authors\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Authors\AuthorNestedMasterPage.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Manage\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_DataPublic\Photo Gallery\" />
+    <Folder Include="forum\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewsView\NestedMasterNewsView.master" />
+    <None Include="App_DataPublic\PDF\RadUploadTemp\RadUploadTestFile" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Bold\DroidKufi-Bold.eot" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Bold\DroidKufi-Bold.ttf" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Bold\DroidKufi-Bold.woff" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Bold\DroidKufi-Bold.woff2" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Regular\DroidKufi-Regular.eot" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Regular\DroidKufi-Regular.ttf" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Regular\DroidKufi-Regular.woff" />
+    <Content Include="Styles\Fonts\DroidKufi\DroidKufi-Regular\DroidKufi-Regular.woff2" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Bold\DroidNaskh-Bold.eot" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Bold\DroidNaskh-Bold.ttf" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Bold\DroidNaskh-Bold.woff" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Bold\DroidNaskh-Bold.woff2" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Regular\DroidNaskh-Regular.eot" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Regular\DroidNaskh-Regular.ttf" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Regular\DroidNaskh-Regular.woff" />
+    <Content Include="Styles\Fonts\DroidNaskh\DroidNaskh-Regular\DroidNaskh-Regular.woff2" />
+    <Content Include="Styles\Fonts\FrutigerBlack\FrutigerBlack.eot" />
+    <Content Include="Styles\Fonts\FrutigerBlack\FrutigerBlack.ttf" />
+    <Content Include="Styles\Fonts\FrutigerBlack\FrutigerBlack.woff" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeueBold\HelveticaNeueW23forSKY-Bd.eot" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeueBold\HelveticaNeueW23forSKY-Bd.ttf" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeueBold\HelveticaNeueW23forSKY-Bd.woff" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeue\HelveticaNeueW23forSKY-Reg.eot" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeue\HelveticaNeueW23forSKY-Reg.ttf" />
+    <Content Include="Styles\Fonts\HelveticaNeue\HelveticaNeue\HelveticaNeueW23forSKY-Reg.woff" />
+    <Content Include="Styles\Fonts\Neo Sans Arabic\NeoSansArabic.eot" />
+    <Content Include="Styles\Fonts\Neo Sans Arabic\NeoSansArabic.ttf" />
+    <Content Include="Styles\Fonts\Palatino\palatino.eot" />
+    <Content Include="Styles\Fonts\Palatino\palatino.ttf" />
+    <Content Include="Styles\Fonts\Palatino\palatino.woff" />
+    <Content Include="Styles\Fonts\Nassim\Nassim-bold.woff" />
+    <Content Include="Styles\Fonts\Nassim\Nassim-regular.woff" />
+    <Content Include="Styles\Fonts\Hacen\Hacen Beirut\Hacen Beirut.ttf" />
+    <Content Include="Styles\Fonts\Hacen\Hacen Liner Screen\hacen_liner_screen.eot" />
+    <Content Include="Styles\Fonts\Hacen\Hacen Liner Screen\hacen_liner_screen.otf" />
+    <Content Include="Styles\Fonts\Hacen\Hacen Liner Screen\hacen_liner_screen.ttf" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Bold.eot" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Bold.ttf" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Bold.woff" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Light.eot" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Light.ttf" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Light.woff" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Regular.eot" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Regular.ttf" />
+    <Content Include="Styles\Fonts\TitlesFont\Titles-Font-Regular.woff" />
+    <Content Include="Styles\Fonts\ge-ss-med\GE_SS_Two_Bold.otf" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <None Include="Styles\Hacen Newspaper.ttf" />
+    <None Include="Styles\hacen_liner_screen.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2435</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseJQuerySupport="False" UseAjaxifiedTemplates="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

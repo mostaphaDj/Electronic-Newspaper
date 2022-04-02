@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DynamicData/FieldTemplates/MultipleFileUpload_Edit.ascx" hash="fffffff7f0117600" filehash="ffffbe0e75879127" flags="110000" assembly="App_Web_vxxjzsb5" type="ASP.dynamicdata_fieldtemplates_multiplefileupload_edit_ascx">
+    <filedeps>
+        <filedep name="/DynamicData/FieldTemplates/MultipleFileUpload_Edit.ascx" />
+    </filedeps>
+</preserve>

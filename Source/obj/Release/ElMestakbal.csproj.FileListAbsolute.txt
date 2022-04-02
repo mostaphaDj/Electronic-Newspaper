@@ -1,0 +1,58 @@
+F:\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+F:\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+F:\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+F:\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+F:\News paper\ElMestakbal\ElMestakbal\obj\Release\ResolveAssemblyReference.cache
+F:\News paper\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.dll
+F:\News paper\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.pdb
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.pdb
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+G:\Mostapha\News paper\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.csprojResolveAssemblyReference.cache
+D:\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+D:\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+D:\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+D:\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+D:\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+D:\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.csprojResolveAssemblyReference.cache
+D:\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.dll
+D:\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.pdb
+D:\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+D:\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.Skins.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\bin\Telerik.Web.UI.xml
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.dll
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.pdb
+F:\Mostapha\Programation\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.csprojResolveAssemblyReference.cache
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll.config
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.pdb
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.csprojResolveAssemblyReference.cache
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll.config
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.dll
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\ElMestakbal.pdb
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.dll
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.xml
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.csprojResolveAssemblyReference.cache
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.dll
+M:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.pdb
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Castle.Core.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.SqlServer.dll
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\Castle.Core.xml
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\bin\EntityFramework.SqlServer.xml
+F:\Mostapha\Projects\ElMestakbal\ElMestakbal\obj\Release\ElMestakbal.dll.licenses

@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" MasterPageFile="../Site.Master" AutoEventWireup="true" CodeBehind="AuthorNestedMasterPage.master.cs" Inherits="ElMestakbal.Authors.AuthorNestedMasterPage" %>
+<%@ Register src="RightColuUC.ascx" tagname="RightColuUC" tagprefix="uc1" %>
+<%@ Register src="LeftColuUC.ascx" tagname="LeftColuUC" tagprefix="uc2" %>
+<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder2" runat="server"/>
+</asp:Content>
+
+<asp:Content ID="RightColuContentPlaceHolder" ContentPlaceHolderID="RightColuContentPlaceHolder" runat="server">
+    <uc1:RightColuUC ID="RightColuUC1" runat="server" />
+</asp:Content>
+<asp:Content ID="LeftColuContent" ContentPlaceHolderID="LeftColuContentPlaceHolder" runat="server">
+   
+</asp:Content>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="MainContentPlaceHolder2" runat="server" /><!---->
+</asp:Content>

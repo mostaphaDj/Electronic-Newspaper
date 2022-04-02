@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/News/PublishPDF.aspx" hash="fffffff7f0117600" filehash="a6b9f4d710b1addd" flags="110000" assembly="App_Web_gajgrpi0" type="ASP.manage_news_publishpdf_aspx">
+    <filedeps>
+        <filedep name="/Manage/CPanelMasterPage.Master" />
+        <filedep name="/Manage/News/PublishPDF.aspx" />
+        <filedep name="/Manage/RightColuUC.ascx" />
+    </filedeps>
+</preserve>

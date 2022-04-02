@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DynamicData/FieldTemplates/Decimal_Edit.ascx" hash="fffffff7f0117600" filehash="1c75fb36b6c6" flags="110000" assembly="App_Web_vxxjzsb5" type="ASP.dynamicdata_fieldtemplates_decimal_edit_ascx">
+    <filedeps>
+        <filedep name="/DynamicData/FieldTemplates/Decimal_Edit.ascx" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DynamicData/FieldTemplates/MainImage.ascx" hash="fffffff7f0117600" filehash="ffffdee99dd14d86" flags="110000" assembly="App_Web_vxxjzsb5" type="ASP.dynamicdata_fieldtemplates_mainimage_ascx">
+    <filedeps>
+        <filedep name="/DynamicData/FieldTemplates/MainImage.ascx" />
+    </filedeps>
+</preserve>

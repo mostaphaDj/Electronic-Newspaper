@@ -1,0 +1,21 @@
+/************************************************************************
+http://z-pad.net
+
+************************************************************************/
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'NeoSansArabic';
+	src: url(font/NeoSansArabic.eot);
+	src: url(font/NeoSansArabic.eot?#iefix) format("embedded-opentype"),url(font/NeoSansArabic.woff) format("woff"),url(font/NeoSansArabic.ttf) format("truetype"),url(font/NeoSansArabic.svg#NeoSansArabic) format("svg");
+}
+
+@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'NeoSansArabic';
+	src: url(font/NeoSansArabic.ttf) format("truetype");
+	}
+}

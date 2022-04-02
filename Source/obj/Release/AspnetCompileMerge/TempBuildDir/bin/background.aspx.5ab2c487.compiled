@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/Pub/Background.aspx" hash="fffffff7f0117600" filehash="e21d07399cdc8e9d" flags="110000" assembly="App_Web_q0jhwmuu" type="ASP.manage_pub_background_aspx">
+    <filedeps>
+        <filedep name="/Manage/CPanelNestedMasterPage.master" />
+        <filedep name="/Manage/LeftColuUC.ascx" />
+        <filedep name="/Manage/Pub/Background.aspx" />
+        <filedep name="/Manage/RightColuUC.ascx" />
+        <filedep name="/Site.Master" />
+        <filedep name="/UserControls/FooterUC.ascx" />
+        <filedep name="/UserControls/HeaderUC.ascx" />
+        <filedep name="/UserControls/jqDockFollowUs.ascx" />
+        <filedep name="/UserControls/MainMenu.ascx" />
+        <filedep name="/UserControls/StickySidePanel.ascx" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewsDBModelStoreContainer" CdmEntityContainer="NewsDBEntities">
+    <EntitySetMapping Name="Keywords">
+      <EntityTypeMapping TypeName="NewsDBModel.Keywords">
+        <MappingFragment StoreEntitySet="Keywords">
+          <ScalarProperty Name="Word" ColumnName="Word" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="NewsDBModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="AuthorString" ColumnName="AuthorString" />
+          <ScalarProperty Name="TheNewsPaperNumberId" ColumnName="TheNewsPaperNumberId" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+          <ScalarProperty Name="DirectoryName" ColumnName="DirectoryName" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="EndPublishDate" ColumnName="EndPublishDate" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="OrderInGroup" ColumnName="OrderInGroup" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SphereId" ColumnName="SphereId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="VisitsNumber" ColumnName="VisitsNumber" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PollsOptions">
+      <EntityTypeMapping TypeName="NewsDBModel.PollsOptions">
+        <MappingFragment StoreEntitySet="PollsOptions">
+          <ScalarProperty Name="PollsQuestionsId" ColumnName="PollsQuestionsId" />
+          <ScalarProperty Name="PollOption" ColumnName="PollOption" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PollsQuestions">
+      <EntityTypeMapping TypeName="NewsDBModel.PollsQuestions">
+        <MappingFragment StoreEntitySet="PollsQuestions">
+          <ScalarProperty Name="PollQuestion" ColumnName="PollQuestion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="News_Keywords" TypeName="NewsDBModel.NewsKeywords" StoreEntitySet="News_Keywords">
+      <EndProperty Name="Keywords">
+        <ScalarProperty Name="Id" ColumnName="KeywordId" />
+      </EndProperty>
+      <EndProperty Name="News">
+        <ScalarProperty Name="Id" ColumnName="NewsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="ViewAuthors">
+      <EntityTypeMapping TypeName="NewsDBModel.ViewAuthors">
+        <MappingFragment StoreEntitySet="ViewAuthors">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Users">
+      <EntityTypeMapping TypeName="NewsDBModel.aspnet_Users">
+        <MappingFragment StoreEntitySet="aspnet_Users">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spheres">
+      <EntityTypeMapping TypeName="NewsDBModel.Spheres">
+        <MappingFragment StoreEntitySet="Spheres">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commenter">
+      <EntityTypeMapping TypeName="NewsDBModel.Commenter">
+        <MappingFragment StoreEntitySet="Commenter">
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="NewsDBModel.Comments">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="CommenterId" ColumnName="CommenterId" />
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="CommentDate" ColumnName="CommentDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ReplyTo" ColumnName="ReplyTo" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="NewsDBModel.Groups">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="OrderGroup" ColumnName="OrderGroup" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="NewsDBModel.Places">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Newspapers">
+      <EntityTypeMapping TypeName="NewsDBModel.Newspapers">
+        <MappingFragment StoreEntitySet="Newspapers">
+          <ScalarProperty Name="NumberOfDownloads" ColumnName="NumberOfDownloads" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUs">
+      <EntityTypeMapping TypeName="NewsDBModel.ContactUs">
+        <MappingFragment StoreEntitySet="ContactUs">
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewKammash">
+      <EntityTypeMapping TypeName="NewsDBModel.ViewKammash">
+        <MappingFragment StoreEntitySet="ViewKammash">
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+          <ScalarProperty Name="DirectoryName" ColumnName="DirectoryName" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewLastNews">
+      <EntityTypeMapping TypeName="NewsDBModel.ViewLastNews">
+        <MappingFragment StoreEntitySet="ViewLastNews">
+          <ScalarProperty Name="EndPublishDate" ColumnName="EndPublishDate" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+          <ScalarProperty Name="DirectoryName" ColumnName="DirectoryName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewSlideshow">
+      <EntityTypeMapping TypeName="NewsDBModel.ViewSlideshow">
+        <MappingFragment StoreEntitySet="ViewSlideshow">
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+          <ScalarProperty Name="DirectoryName" ColumnName="DirectoryName" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetNews" FunctionName="NewsDBModel.Store.GetNews">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NewsDBModel.GetNews_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="DirectoryName" ColumnName="DirectoryName" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ViewNews">
+      <EntityTypeMapping TypeName="NewsDBModel.ViewNews">
+        <MappingFragment StoreEntitySet="ViewNews">
+          <ScalarProperty Name="OrderGroup" ColumnName="OrderGroup" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+          <ScalarProperty Name="TheNewsPaperNumberId" ColumnName="TheNewsPaperNumberId" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+          <ScalarProperty Name="DirectoryName" ColumnName="DirectoryName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="SphereId" ColumnName="SphereId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EndPublishDate" ColumnName="EndPublishDate" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+          <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="VisitsNumber" ColumnName="VisitsNumber" />
+          <ScalarProperty Name="OrderInGroup" ColumnName="OrderInGroup" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewCarousel">
+      <EntityTypeMapping TypeName="NewsDBModel.ViewCarousel">
+        <MappingFragment StoreEntitySet="ViewCarousel">
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+          <ScalarProperty Name="DirectoryName" ColumnName="DirectoryName" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

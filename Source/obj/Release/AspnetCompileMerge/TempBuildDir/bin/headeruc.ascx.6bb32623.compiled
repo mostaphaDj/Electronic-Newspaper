@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/UserControls/HeaderUC.ascx" hash="fffffff7f0117600" filehash="1f982e983a0cfbcd" flags="110000" assembly="App_Web_ywn31rag" type="ASP.usercontrols_headeruc_ascx">
+    <filedeps>
+        <filedep name="/UserControls/HeaderUC.ascx" />
+        <filedep name="/UserControls/jqDockFollowUs.ascx" />
+        <filedep name="/UserControls/MainMenu.ascx" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DynamicData/FieldTemplates/Author.ascx" hash="fffffff7f0117600" filehash="11ba9af68ffc" flags="110000" assembly="App_Web_vxxjzsb5" type="ASP.dynamicdata_fieldtemplates_author_ascx">
+    <filedeps>
+        <filedep name="/DynamicData/FieldTemplates/Author.ascx" />
+    </filedeps>
+</preserve>

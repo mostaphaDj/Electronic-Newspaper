@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/UserControls/leftColuRibbon.ascx" hash="fffffff7f0117600" filehash="db7f67b1e6a36c30" flags="110000" assembly="App_Web_ywn31rag" type="ASP.usercontrols_leftcoluribbon_ascx">
+    <filedeps>
+        <filedep name="/UserControls/leftColuRibbon.ascx" />
+        <filedep name="/UserControls/NewsPaperPDF.ascx" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/News/InsertNews.aspx" hash="fffffff7f0117600" filehash="f5799043920e2b20" flags="110000" assembly="App_Web_gajgrpi0" type="ASP.manage_news_insertnews_aspx">
+    <filedeps>
+        <filedep name="/Manage/CPanelMasterPage.Master" />
+        <filedep name="/Manage/News/InsertNews.aspx" />
+        <filedep name="/Manage/RightColuUC.ascx" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/App_DataPublic/PDF/Newspaper.aspx" hash="fffffff7f0117600" filehash="ffffe5cef6b91b86" flags="110000" assembly="App_Web_sumspmbp" type="ASP.app_datapublic_pdf_newspaper_aspx">
+    <filedeps>
+        <filedep name="/App_DataPublic/PDF/Newspaper.aspx" />
+    </filedeps>
+</preserve>

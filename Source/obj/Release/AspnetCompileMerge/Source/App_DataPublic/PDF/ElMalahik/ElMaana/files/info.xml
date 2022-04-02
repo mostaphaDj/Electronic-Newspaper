@@ -1,0 +1,77 @@
+<Info>
+  <Pages>
+    <Page Number="1" Width="822" Height="1191">
+      <Images>
+        <Normal Path="images/page1.jpg" FileSize="98" />
+        <Thumbnail Path="images/page1_thumbnail.jpg" FileSize="4" />
+        <Zoomed Path="images/page1_zoom.jpg" FileSize="280" />
+      </Images>
+      <Buttons />
+    </Page>
+    <Page Number="2" Width="794" Height="1191">
+      <Images>
+        <Normal Path="images/page2.jpg" FileSize="148" />
+        <Thumbnail Path="images/page2_thumbnail.jpg" FileSize="3" />
+        <Zoomed Path="images/page2_zoom.jpg" FileSize="438" />
+      </Images>
+      <Buttons />
+    </Page>
+    <Page Number="3" Width="794" Height="1191">
+      <Images>
+        <Normal Path="images/page3.jpg" FileSize="142" />
+        <Thumbnail Path="images/page3_thumbnail.jpg" FileSize="3" />
+        <Zoomed Path="images/page3_zoom.jpg" FileSize="403" />
+      </Images>
+      <Buttons />
+    </Page>
+    <Page Number="4" Width="792" Height="1224">
+      <Images>
+        <Normal Path="images/page4.jpg" FileSize="122" />
+        <Thumbnail Path="images/page4_thumbnail.jpg" FileSize="4" />
+        <Zoomed Path="images/page4_zoom.jpg" FileSize="365" />
+      </Images>
+      <Buttons />
+    </Page>
+    <Page Number="5" Width="794" Height="1191">
+      <Images>
+        <Normal Path="images/page5.jpg" FileSize="145" />
+        <Thumbnail Path="images/page5_thumbnail.jpg" FileSize="3" />
+        <Zoomed Path="images/page5_zoom.jpg" FileSize="425" />
+      </Images>
+      <Buttons />
+    </Page>
+    <Page Number="6" Width="792" Height="1224">
+      <Images>
+        <Normal Path="images/page6.jpg" FileSize="134" />
+        <Thumbnail Path="images/page6_thumbnail.jpg" FileSize="4" />
+        <Zoomed Path="images/page6_zoom.jpg" FileSize="394" />
+      </Images>
+      <Buttons />
+    </Page>
+    <Page Number="7" Width="794" Height="1191">
+      <Images>
+        <Normal Path="images/page7.jpg" FileSize="139" />
+        <Thumbnail Path="images/page7_thumbnail.jpg" FileSize="3" />
+        <Zoomed Path="images/page7_zoom.jpg" FileSize="398" />
+      </Images>
+      <Buttons />
+    </Page>
+    <Page Number="8" Width="792" Height="1224">
+      <Images>
+        <Normal Path="images/page8.jpg" FileSize="138" />
+        <Thumbnail Path="images/page8_thumbnail.jpg" FileSize="3" />
+        <Zoomed Path="images/page8_zoom.jpg" FileSize="416" />
+      </Images>
+      <Buttons />
+    </Page>
+  </Pages>
+  <TableOfContents>
+    <Bookmark PageNumber="1" Title="01" Id="1" />
+    <Bookmark PageNumber="2" Title="02" Id="2" />
+    <Bookmark PageNumber="3" Title="03" Id="3" />
+    <Bookmark PageNumber="4" Title="04" Id="4" />
+    <Bookmark PageNumber="5" Title="05" Id="5" />
+    <Bookmark PageNumber="6" Title="06" Id="6" />
+    <Bookmark PageNumber="7" Title="07" Id="7" />
+  </TableOfContents>
+</Info>

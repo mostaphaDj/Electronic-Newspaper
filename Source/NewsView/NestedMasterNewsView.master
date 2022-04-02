@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NestedMasterNewsView.master.cs" Inherits="ElMestakbal.NewsView.NestedMasterNewsView" %>
+
+<%@ Register src="../UserControls/leftColuRibbon.ascx" tagname="leftColuRibbon" tagprefix="uc1" %>
+
+<%@ Register src="../UserControls/leftColu.ascx" tagname="leftColu" tagprefix="uc2" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+
+<%--    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".BoxNews .Divimg img").hover(function () {
+                // hover in
+                $(this).parent().parent().css("z-index", 1);
+                $(this).animate({
+                    height: "250",
+                    width: "250",
+                    left: "-=80",
+                    top: "-=80"
+                }, 200, 'easeOutBack');
+            }, function () {
+                // hover out
+                $(this).parent().parent().css("z-index", 0);
+                $(this).animate({
+                    height: "90",
+                    width: "90",
+                    left: "+=80",
+                    top: "+=80"
+                }, 200, 'easeOutBack');
+            });
+        });
+    </script>--%>
+
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server"/>
+</asp:Content>
+
+<asp:Content ID="SlideshowContent" ContentPlaceHolderID="SlideshowContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="SlideshowContentPlaceHolder" runat="server" />
+</asp:Content>
+
+<asp:Content ID="rightColuContent" ContentPlaceHolderID="rightColuContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="rightColuContentPlaceHolder" runat="server" />
+</asp:Content>
+
+<asp:Content ID="leftColuContent" ContentPlaceHolderID="leftColuContentPlaceHolder" runat="server">
+        <uc2:leftColu ID="leftColu1" runat="server" />
+</asp:Content>
+
+<asp:Content ID="leftColuContent2" ContentPlaceHolderID="leftColuContentPlaceHolde2" runat="server">
+    <uc1:leftColuRibbon ID="leftColuRibbon1" runat="server" />
+</asp:Content>
+
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" /><!---->
+</asp:Content>

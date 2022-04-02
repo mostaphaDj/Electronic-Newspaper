@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Manage/ControlPanel.aspx" hash="fffffff7f0117600" filehash="b41d9ed6ddcba6f0" flags="110000" assembly="App_Web_2xaulc4l" type="ASP.manage_controlpanel_aspx">
+    <filedeps>
+        <filedep name="/Manage/ControlPanel.aspx" />
+        <filedep name="/Manage/CPanelMasterPage.Master" />
+        <filedep name="/Manage/LeftColuUC.ascx" />
+        <filedep name="/Manage/RightColuUC.ascx" />
+    </filedeps>
+</preserve>
